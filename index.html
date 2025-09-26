@@ -1,37 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Your Name</title>
+  <title>薛羽宸 · 个人简介</title>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #e1bee7);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
       max-width: 600px;
-      margin: 2rem auto;
-      padding: 1rem;
-      line-height: 1.6;
+      text-align: center;
     }
     h1 {
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin-bottom: 0.5rem;
+      color: #333;
     }
-    a {
-      color: #007acc;
+    h2 {
+      font-size: 1.2rem;
+      margin: 0.2rem 0 1rem;
+      color: #555;
+      font-weight: normal;
+    }
+    p {
+      color: #444;
+      line-height: 1.6;
+    }
+    .links a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.6rem 1rem;
+      background: #007acc;
+      color: white;
+      border-radius: 0.5rem;
       text-decoration: none;
+      transition: background 0.2s;
     }
-    a:hover {
-      text-decoration: underline;
+    .links a:hover {
+      background: #005f99;
     }
   </style>
 </head>
 <body>
-  <h1>Hello, I’m Your Name 👋</h1>
-  <p>Welcome to my minimalist personal website.</p>
-  <p>You can find me on:
-    <a href="https://github.com/your-username">GitHub</a>,
-    <a href="https://www.linkedin.com/in/your-profile">LinkedIn</a>.
-  </p>
+  <div class="card">
+    <h1>薛羽宸 👋</h1>
+    <h2>INSA 学生 | 曾就读于南外 | 法语方向</h2>
+    <p>
+      你好！我是薛羽宸，一名正在 INSA 学习的学生。<br>
+      我的高中时期在南京外国语学校度过，主修法语。<br>
+      我热爱学习与探索新事物，期待未来成为一名优秀的工程师。
+    </p>
+    <div class="links">
+      <a href="https://github.com/your-username" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/your-profile" target="_blank">LinkedIn</a>
+    </div>
+  </div>
 </body>
 </html>
-
