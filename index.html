@@ -1,72 +1,204 @@
-<!DOCTYPE html>
-<html lang="zh">
+<!doctype html>
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>薛羽宸 · 个人简介</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yuchen Xue — CV</title>
+  <meta name="description" content="Yuchen Xue — Étudiant ingénieur à l’INSA Lyon" />
   <style>
-    body {
-      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-      background: linear-gradient(135deg, #e0f7fa, #e1bee7);
-      margin: 0;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
+    :root{
+      --bg:#ffffff;
+      --text:#111;
+      --muted:#666;
+      --accent:#000;
+      --maxw:900px;
+      font-family: Inter, "Helvetica Neue", Arial, sans-serif;
     }
-    .card {
-      background: white;
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      max-width: 600px;
-      text-align: center;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:40px 20px;
+      display:flex;
+      justify-content:center;
     }
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
-      color: #333;
+    .wrap{
+      max-width:var(--maxw);
+      width:100%;
+      border-left:8px solid var(--accent);
+      padding:28px 40px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,250,0.98));
+      box-shadow: 0 8px 30px rgba(0,0,0,0.04);
     }
-    h2 {
-      font-size: 1.2rem;
-      margin: 0.2rem 0 1rem;
-      color: #555;
-      font-weight: normal;
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:flex-start;
     }
-    p {
-      color: #444;
-      line-height: 1.6;
+    .name{
+      font-size:36px;
+      letter-spacing:2px;
+      font-weight:700;
+      margin:0;
     }
-    .links a {
-      display: inline-block;
-      margin: 0.5rem;
-      padding: 0.6rem 1rem;
-      background: #007acc;
-      color: white;
-      border-radius: 0.5rem;
-      text-decoration: none;
-      transition: background 0.2s;
+    .role{
+      margin:6px 0 0;
+      color:var(--muted);
+      font-size:14px;
     }
-    .links a:hover {
-      background: #005f99;
+
+    .contact{
+      text-align:right;
+      font-size:14px;
+      color:var(--muted);
     }
+    .contact a{ color:var(--muted); text-decoration:none }
+    .contact a:hover{ text-decoration:underline; color:var(--text) }
+
+    main{ display:grid; grid-template-columns: 1fr 320px; gap:32px; margin-top:28px; align-items:start; }
+    @media (max-width:920px){ main{grid-template-columns:1fr; } .contact{text-align:left;} .wrap{padding:20px;} }
+
+    .card{ padding-bottom:12px; border-bottom:1px solid #eee; margin-bottom:18px; }
+    h2{ margin:0 0 12px 0; font-size:18px; letter-spacing:1px; }
+    p, li { color:var(--muted); line-height:1.5; margin:0 0 8px 0; font-size:14px;}
+    ul { padding-left:18px; margin:0 0 12px 0; }
+
+    .side {
+      border-left:1px dashed #eee;
+      padding-left:22px;
+    }
+    .meta { font-size:13px; color:var(--muted); margin-bottom:10px; }
+    .skills { display:flex; flex-wrap:wrap; gap:8px; }
+    .skill { font-size:13px; padding:6px 8px; border-radius:6px; background:#f6f6f6; color:var(--muted); }
+
+    .social { display:flex; gap:10px; margin-top:6px; }
+    .btn {
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:6px;
+      text-decoration:none;
+      font-weight:600;
+      font-size:13px;
+      border:1px solid #111;
+      color:#111;
+    }
+    .download { background:#111; color:#fff; border-color:#111; }
+
+    footer{ margin-top:20px; font-size:13px; color:var(--muted); text-align:center; }
+    .small { font-size:12px; color:var(--muted); }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>薛羽宸 👋</h1>
-    <h2>INSA 学生 | 曾就读于南外 | 英语方向</h2>
-    <p>
-      你好！我是薛羽宸，一名正在 INSA 学习的学生。<br>
-      我的高中时期在南京外国语学校度过，主修英语。<br>
-      我热爱学习与探索新事物，期待未来成为一名优秀的工程师。
-    </p>
-    <div class="links">
-      <a href="https://github.com/your-username" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/your-profile" target="_blank">LinkedIn</a>
-    </div>
+  <div class="wrap" role="main">
+    <header>
+      <div>
+        <h1 class="name">Yuchen XUE</h1>
+        <div class="role">INSA Lyon — Département Informatique (Étudiant ingénieur)</div>
+      </div>
+
+      <div class="contact">
+        <div>📍 Villeurbanne, France</div>
+        <div>✉️ <a href="mailto:yuchenxue5@gmail.com">yuchenxue5@gmail.com</a></div>
+        <div>📞 +33 (0)7 89 42 54 49</div>
+
+        <div class="social" style="margin-top:8px;justify-content:flex-end;">
+          <a class="btn" href="https://github.com/Alterxue" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/yuchen-xue-055b02384" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn download" href="Yuchen XUE CV.pdf" download>Télécharger CV (PDF)</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="card">
+          <h2>Formation</h2>
+          <p><strong>INSA Lyon</strong> — École d’ingénieurs, Département Informatique (2023–2028, en cours)</p>
+          <p><strong>Collège et Lycée</strong> — École des langues étrangères de Nankin (2017–2023)</p>
+        </div>
+
+        <div class="card">
+          <h2>Expériences</h2>
+          <ul>
+            <li><strong>Stage — La Poste, Saint-Priest (juil. 2024 – sept. 2024)</strong><br/>
+                Tri de lettres et petits colis, manipulation de machines de tri, participation au chargement des camions, travail en équipe dans un environnement à haut volume.</li>
+
+            <li style="margin-top:10px;"><strong>Projet INRAE — Dispositif de piégeage d’insectes et plateforme de données</strong><br/>
+                Développement de la plateforme web, traitement de données et rédaction du manuel d’utilisation des équipements.</li>
+
+            <li style="margin-top:10px;"><strong>Programme P2I — INSA Lyon (fév. 2025 – juin 2025)</strong><br/>
+                Participation à des projets interdisciplinaires en informatique et systèmes embarqués.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Compétences</h2>
+          <div class="skills">
+            <span class="skill">C / C++</span>
+            <span class="skill">Python</span>
+            <span class="skill">FastAPI</span>
+            <span class="skill">UDP / Réseaux</span>
+            <span class="skill">Tkinter</span>
+            <span class="skill">Git</span>
+            <span class="skill">HTML / CSS</span>
+            <span class="skill">Algorithmes</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Projets</h2>
+          <ul>
+            <li><strong>Serveur de calcul UDP (Arduino)</strong><br/>Traitement de messages binaires et retour des résultats en little-endian.</li>
+            <li style="margin-top:8px;"><strong>Chat multi-utilisateurs (UDP + Client Tkinter)</strong><br/>Diffusion de messages, gestion des commandes (/who, /kick).</li>
+            <li style="margin-top:8px;"><strong>Algorithme de placement optimal des éboueurs</strong><br/>Recherche binaire sur le rayon de couverture pour optimiser la couverture des poubelles.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Langues</h2>
+          <p>Chinois (natif) · Français (C1) · Anglais (C1)</p>
+        </div>
+      </section>
+
+      <aside class="side">
+        <div class="card">
+          <h2>Informations personnelles</h2>
+          <p class="meta">Né le 01/07/2005</p>
+          <p class="meta">Nationalité : Chinoise</p>
+          <p class="meta">Adresse : 20 Avenue Albert Einstein, Villeurbanne</p>
+        </div>
+
+        <div class="card">
+          <h2>Profil</h2>
+          <ul>
+            <li>Esprit créatif et critique</li>
+            <li>Bonne capacité de collaboration</li>
+            <li>Expérience pratique en systèmes embarqués et protocoles réseaux</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Liens utiles</h2>
+          <p class="small">GitHub : <a href="https://github.com/Alterxue" target="_blank" rel="noopener">github.com/Alterxue</a></p>
+          <p class="small">LinkedIn : <a href="https://www.linkedin.com/in/yuchen-xue-055b02384" target="_blank" rel="noopener">linkedin.com/in/yuchen-xue-055b02384</a></p>
+          <p class="small">Email : <a href="mailto:yuchenxue5@gmail.com">yuchenxue5@gmail.com</a></p>
+        </div>
+
+        <div class="card">
+          <h2>Objectif</h2>
+          <p>À la recherche d’un stage d’été (2–3 mois) dans les domaines informatique, systèmes embarqués ou back-end.</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div class="small">© Yuchen Xue — INSA Lyon · 2025</div>
+    </footer>
   </div>
 </body>
 </html>
-
