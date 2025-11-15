@@ -273,15 +273,53 @@
     }
 
     .comments-section {
-      background: var(--bg-light);
-      padding: 2rem;
-      border-radius: 12px;
-      margin-top: 2rem;
+      background: linear-gradient(135deg, var(--bg-light) 0%, #ffffff 100%);
+      padding: 3rem 2rem;
+      border-radius: 16px;
+      margin: 2rem 0;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .comments-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
     }
 
     .comments-section h2 {
       text-align: center;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      color: var(--text-dark);
+      font-size: 1.8rem;
+      position: relative;
+      padding-bottom: 1rem;
+    }
+
+    .comments-section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+      border-radius: 2px;
+    }
+
+    .comments-section .giscus {
+      background: white;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border-color);
     }
 
     footer { 
@@ -364,6 +402,68 @@
     .project-item:hover,
     .skill-category:hover {
       transform: translateY(-2px);
+    }
+
+    /* Giscus Comments Custom Styling */
+    .giscus-frame {
+      border-radius: 12px !important;
+      border: none !important;
+      box-shadow: var(--shadow) !important;
+      background: white !important;
+    }
+
+    /* Override Giscus default styles */
+    .comments-section iframe {
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+    }
+
+    /* Custom loading animation for comments */
+    .comments-loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+      color: var(--text-light);
+      font-size: 1.1rem;
+    }
+
+    .comments-loading::before {
+      content: '💬';
+      font-size: 2rem;
+      margin-right: 1rem;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    /* Comments section decorative elements */
+    .comments-section::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+      border-radius: 50%;
+      opacity: 0.1;
+    }
+
+    .comments-intro {
+      text-align: center;
+      color: var(--text-light);
+      margin-bottom: 2rem;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .comments-intro i {
+      color: var(--accent-color);
+      margin-right: 0.5rem;
     }
   </style>
 </head>
@@ -608,6 +708,12 @@
         <h2 class="lang en hidden"><i class="fas fa-comments"></i> Leave a Message</h2>
         <h2 class="lang zh hidden"><i class="fas fa-comments"></i> 留言板</h2>
 
+        <div class="comments-intro">
+          <p class="lang fr"><i class="fas fa-heart"></i> N'hésitez pas à laisser un message, une question ou un commentaire !</p>
+          <p class="lang en hidden"><i class="fas fa-heart"></i> Feel free to leave a message, question, or comment!</p>
+          <p class="lang zh hidden"><i class="fas fa-heart"></i> 欢迎留言、提问或评论！</p>
+        </div>
+
         <script src="https://giscus.app/client.js"
           data-repo="Alterxue/Alterxue.github.io"
           data-repo-id="R_kgDOP3kbYA"
@@ -616,7 +722,7 @@
           data-reactions-enabled="1"
           data-emit-metadata="0"
           data-input-position="top"
-          data-theme="preferred_color_scheme"
+          data-theme="light"
           data-lang="zh-CN"
           data-loading="lazy"
           crossorigin="anonymous"
