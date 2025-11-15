@@ -6,7 +6,9 @@
   <title>Yuchen Xue — Landing Page</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <style>    :root {
+  <style>
+    /* Initialize theme before rendering */
+    :root {
       --primary-color: #1e3a8a;
       --secondary-color: #334155;
       --accent-color: #60a5fa;
@@ -17,6 +19,19 @@
       --border-color: #334155;
       --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
       --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+    }    /* Light theme */
+    html[data-theme="light"],
+    body[data-theme="light"] {
+      --primary-color: #1e3a8a !important;
+      --secondary-color: #475569 !important;
+      --accent-color: #3b82f6 !important;
+      --text-dark: #0f172a !important;
+      --text-light: #64748b !important;
+      --bg-dark: #f8fafc !important;
+      --bg-card: #ffffff !important;
+      --border-color: #cbd5e1 !important;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.1) !important;
     }
 
     * {
@@ -41,15 +56,14 @@
       top: 0;
       z-index: 100;
       box-shadow: var(--shadow);
-    }
-
-    .header-container {
+    }    .header-container {
       max-width: 1200px;
       margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 1rem 2rem;
+      flex-wrap: nowrap;
     }
 
     .site-logo {
@@ -64,22 +78,31 @@
 
     .site-logo i {
       color: var(--primary-color);
-    }
-
-    .nav-menu {
+    }    .nav-menu {
       display: flex;
       list-style: none;
-      gap: 2rem;
+      gap: 0.5rem;
       margin: 0;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-item {
+      white-space: nowrap;
+      margin: 0;
+      padding: 0;
     }
 
     .nav-item a {
       color: var(--text-light);
       text-decoration: none;
       font-weight: 500;
-      padding: 0.5rem 1rem;
+      padding: 0.3rem 0.8rem;
       border-radius: 6px;
       transition: all 0.2s;
+      display: inline-block;
+      font-size: 0.95rem;
     }
 
     .nav-item a:hover {
@@ -90,9 +113,7 @@
     .nav-item.active a {
       color: var(--primary-color);
       background: rgba(30, 58, 138, 0.1);
-    }
-
-    .theme-toggle {
+    }    .theme-toggle {
       background: none;
       border: none;
       color: var(--text-light);
@@ -100,12 +121,20 @@
       cursor: pointer;
       padding: 0.5rem;
       border-radius: 6px;
-      transition: all 0.2s;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .theme-toggle:hover {
       color: var(--text-dark);
       background: var(--bg-dark);
+      transform: rotate(20deg);
+    }
+
+    .theme-toggle i {
+      transition: transform 0.3s ease;
     }
 
     /* Mobile menu */
@@ -429,9 +458,7 @@
 
     .skill-list {
       list-style: none;
-    }
-
-    .skill-list li {
+    }    .skill-list li {
       color: var(--text-light);
       padding: 0.3rem 0;
       display: flex;
@@ -443,6 +470,7 @@
       color: var(--accent-color);
       font-size: 0.8rem;
       font-weight: 500;
+      display: none;
     }
 
     /* Contact Form */
@@ -506,33 +534,30 @@
     .social-link:hover {
       background: #1e40af;
       transform: scale(1.1);
-    }
-
-    /* Language Switcher */
+    }    /* Language Switcher */
     .lang-switch {
       display: flex;
-      gap: 0.5rem;
-      justify-content: center;
-      margin-bottom: 2rem;
+      gap: 0.3rem;
+      align-items: center;
     }
 
     .lang-switch button {
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 0.8rem;
       border: 1px solid var(--border-color);
       background: var(--bg-card);
       color: var(--text-light);
       cursor: pointer;
-      border-radius: 6px;
+      border-radius: 4px;
       transition: all 0.2s;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      min-width: 40px;
     }
 
     .lang-switch button:hover {
       background: var(--border-color);
       color: var(--text-dark);
-    }
-
-    .lang-switch button.active {
+    }    .lang-switch button.active {
       background: var(--primary-color);
       color: white;
       border-color: var(--primary-color);
@@ -664,16 +689,17 @@
       border: 1px solid var(--border-color);
     }    /* Responsive Design */
     @media (max-width: 768px) {
+      .header-container {
+        padding: 1rem;
+        gap: 0.5rem;
+      }
+      
       .nav-menu {
         display: none;
       }
       
       .mobile-menu-toggle {
         display: block;
-      }
-      
-      .header-container {
-        padding: 1rem;
       }
       
       .main-container {
@@ -702,9 +728,16 @@
       }
 
       .form-row {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr;      }
+    }</style>  <script>
+    // Initialize theme immediately before page renders to avoid flash
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
       }
-    }</style>
+    })();
+  </script>
 </head>
 <body>
   <!-- Header Navigation -->
@@ -714,8 +747,7 @@
         <i class="fas fa-rocket"></i>
         Yuchen Xue
       </a>
-      
-      <nav class="nav-menu">
+        <nav class="nav-menu">
         <div class="nav-item active">
           <a href="#" onclick="showPage('home')">
             <span class="lang fr">Accueil</span>
@@ -731,7 +763,11 @@
           </a>
         </div>
         <div class="nav-item">
-          <a href="#" onclick="showPage('portfolio')">Portfolio</a>
+          <a href="#" onclick="showPage('portfolio')">
+            <span class="lang fr">Portfolio</span>
+            <span class="lang en hidden">Portfolio</span>
+            <span class="lang zh hidden">作品集</span>
+          </a>
         </div>
         <div class="nav-item">
           <a href="#" onclick="showPage('experience')">
@@ -739,7 +775,8 @@
             <span class="lang en hidden">Experience</span>
             <span class="lang zh hidden">经历</span>
           </a>
-        </div>        <div class="nav-item">
+        </div>
+        <div class="nav-item">
           <a href="#" onclick="showPage('guestbook')">
             <span class="lang fr">Livre d'or</span>
             <span class="lang en hidden">Guestbook</span>
@@ -753,10 +790,8 @@
             <span class="lang zh hidden">搜索</span>
           </a>
         </div>
-      </nav>
-
-      <div style="display: flex; align-items: center; gap: 1rem;">
-        <div class="lang-switch">
+      </nav>      <div style="display: flex; align-items: center; gap: 0.5rem; margin-left: auto;">
+        <div class="lang-switch" style="margin: 0; gap: 0.3rem;">
           <button onclick="switchLang('fr')" class="active">FR</button>
           <button onclick="switchLang('en')">EN</button>
           <button onclick="switchLang('zh')">中</button>
@@ -765,10 +800,6 @@
           <i class="fas fa-sun"></i>
         </button>
       </div>
-
-      <button class="mobile-menu-toggle">
-        <i class="fas fa-bars"></i>
-      </button>
     </div>
   </header>
 
@@ -945,8 +976,7 @@
           <span class="lang en hidden">Skills</span>
           <span class="lang zh hidden">技能</span>
         </h2>
-        
-        <div class="skills-grid">
+          <div class="skills-grid">
           <div class="skill-category">
             <h3>
               <span class="lang fr">Langages de programmation</span>
@@ -954,10 +984,10 @@
               <span class="lang zh hidden">编程语言</span>
             </h3>
             <ul class="skill-list">
-              <li>Python <span class="skill-level">Avancé</span></li>
-              <li>JavaScript <span class="skill-level">Intermédiaire</span></li>
-              <li>Java <span class="skill-level">Intermédiaire</span></li>
-              <li>C/C++ <span class="skill-level">Base</span></li>
+              <li>Python</li>
+              <li>JavaScript</li>
+              <li>Java</li>
+              <li>C/C++</li>
             </ul>
           </div>
           
@@ -968,10 +998,10 @@
               <span class="lang zh hidden">网页技术</span>
             </h3>
             <ul class="skill-list">
-              <li>HTML/CSS <span class="skill-level">Avancé</span></li>
-              <li>React <span class="skill-level">Intermédiaire</span></li>
-              <li>Node.js <span class="skill-level">Intermédiaire</span></li>
-              <li>Firebase <span class="skill-level">Base</span></li>
+              <li>HTML/CSS</li>
+              <li>React</li>
+              <li>Node.js</li>
+              <li>Firebase</li>
             </ul>
           </div>
           
@@ -982,10 +1012,10 @@
               <span class="lang zh hidden">工具和其他</span>
             </h3>
             <ul class="skill-list">
-              <li>Git <span class="skill-level">Avancé</span></li>
-              <li>Docker <span class="skill-level">Base</span></li>
-              <li>MongoDB <span class="skill-level">Intermédiaire</span></li>
-              <li>Mapbox <span class="skill-level">Intermédiaire</span></li>
+              <li>Git</li>
+              <li>Docker</li>
+              <li>MongoDB</li>
+              <li>Mapbox</li>
             </ul>
           </div>
           
@@ -1000,19 +1030,16 @@
                 <span class="lang fr">Chinois (Mandarin)</span>
                 <span class="lang en hidden">Chinese (Mandarin)</span>
                 <span class="lang zh hidden">中文（普通话）</span>
-                <span class="skill-level">Natif</span>
               </li>
               <li>
                 <span class="lang fr">Français</span>
                 <span class="lang en hidden">French</span>
                 <span class="lang zh hidden">法语</span>
-                <span class="skill-level">C1</span>
               </li>
               <li>
                 <span class="lang fr">Anglais</span>
                 <span class="lang en hidden">English</span>
                 <span class="lang zh hidden">英语</span>
-                <span class="skill-level">C1</span>
               </li>
             </ul>
           </div>
@@ -1433,15 +1460,75 @@
       <a href="https://github.com" style="color: var(--primary-color);">GitHub Pages</a>
     </p>
   </footer>
-
+  <!-- Debug/Testing Info (remove in production) -->
   <script>
+    // Log current theme and language on page load
+    window.addEventListener('load', () => {
+      console.log('🌙 Current Theme:', document.documentElement.getAttribute('data-theme') || 'dark');
+      console.log('🌍 Current Language:', localStorage.getItem('language') || 'fr');
+      console.log('✅ All functionality loaded successfully!');
+    });
+  </script>
+  <script>    // Theme switching - Initialize before other scripts
+    function initializeTheme() {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      updateThemeIcon(savedTheme);
+    }
+    
+    function updateThemeIcon(theme) {
+      const themeToggle = document.querySelector('.theme-toggle');
+      if (!themeToggle) return;
+      
+      const icon = themeToggle.querySelector('i');
+      if (icon) {
+        if (theme === 'light') {
+          icon.classList.remove('fa-sun');
+          icon.classList.add('fa-moon');
+        } else {
+          icon.classList.remove('fa-moon');
+          icon.classList.add('fa-sun');
+        }
+      }
+    }
+    
+    // Initialize theme immediately
+    initializeTheme();
+    
+    // Add event listener when DOM is ready
+    document.addEventListener('DOMContentLoaded', () => {
+      const themeToggle = document.querySelector('.theme-toggle');
+      if (themeToggle) {
+        themeToggle.addEventListener('click', (e) => {
+          e.preventDefault();
+          const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+          
+          document.documentElement.setAttribute('data-theme', newTheme);
+          localStorage.setItem('theme', newTheme);
+          updateThemeIcon(newTheme);
+          console.log('Theme switched to:', newTheme);
+        });
+      }
+    });
+
     // Language switching
     function switchLang(lang) {
       document.querySelectorAll('.lang').forEach(el => el.classList.add('hidden'));
       document.querySelectorAll('.lang.' + lang).forEach(el => el.classList.remove('hidden'));
       document.querySelectorAll('.lang-switch button').forEach(btn => btn.classList.remove('active'));
       document.querySelector(`.lang-switch button[onclick="switchLang('${lang}')"]`).classList.add('active');
-    }
+      localStorage.setItem('language', lang);
+    }    // Initialize language
+    const savedLang = localStorage.getItem('language') || 'fr';
+    switchLang(savedLang);
+    
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      // Re-apply language if needed
+      const currentLang = localStorage.getItem('language') || 'fr';
+      switchLang(currentLang);
+    });
 
     // Page navigation
     function showPage(pageId) {
@@ -1576,3 +1663,4 @@
   </script>
 </body>
 </html>
+`
