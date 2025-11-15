@@ -1,172 +1,187 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Yuchen Xue — CV</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#fdfdfd; color:#111; }
-    .wrap { max-width:900px; margin:auto; padding:40px 20px; }
-    header { display:flex; justify-content:space-between; flex-wrap:wrap; }
-    h1 { margin:0; font-size:32px; }
-    .role { color:#666; font-size:14px; }
-    .contact { text-align:right; font-size:14px; color:#444; }
-    .contact a { color:#444; text-decoration:none; }
-    .lang-switch { margin-top:20px; }
-    .lang-switch button { margin-right:8px; padding:6px 10px; border:1px solid #111; background:#fff; cursor:pointer; border-radius:5px; }
-    .lang-switch button.active { background:#111; color:#fff; }
-    h2 { margin-top:24px; font-size:20px; border-bottom:1px solid #ddd; padding-bottom:4px; }
-    p, li { font-size:14px; color:#333; }
-    ul { padding-left:18px; }
-    footer { margin-top:30px; font-size:13px; color:#666; text-align:center; }
-    .hidden { display:none; }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yuchen Xue — CV</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#fdfdfd; color:#111; }
+    .wrap { max-width:900px; margin:auto; padding:40px 20px; }
+    header { display:flex; justify-content:space-between; flex-wrap:wrap; }
+    h1 { margin:0; font-size:32px; }
+    .role { color:#666; font-size:14px; }
+    .contact { text-align:right; font-size:14px; color:#444; }
+    .contact a { color:#444; text-decoration:none; }
+    .lang-switch { margin-top:20px; }
+    .lang-switch button { margin-right:8px; padding:6px 10px; border:1px solid #111; background:#fff; cursor:pointer; border-radius:5px; }
+    .lang-switch button.active { background:#111; color:#fff; }
+    h2 { margin-top:24px; font-size:20px; border-bottom:1px solid #ddd; padding-bottom:4px; }
+    p, li { font-size:14px; color:#333; }
+    ul { padding-left:18px; }
+    footer { margin-top:30px; font-size:13px; color:#666; text-align:center; }
+    .hidden { display:none; }
+  </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div>
-        <h1>Yuchen XUE</h1>
-        <div class="role lang fr">Étudiant ingénieur — INSA Lyon (Informatique)</div>
-        <div class="role lang en hidden">Engineering student — INSA Lyon (Computer Science)</div>
-        <div class="role lang zh hidden">工程学学生 — 里昂国立应用科学学院（计算机专业）</div>
-      </div>
-      <div class="contact">
-        <div>📍 Villeurbanne, France</div>
-        <div>✉️ <a href="mailto:yuchenxue5@gmail.com">yuchenxue5@gmail.com</a></div>
-        <div>✉️ <a href="mailto:yuchen.xue@insa-lyon.fr">yuchen.xue@insa-lyon.fr</a></div>
-        <div>📞 +33 (0)7 89 42 54 49</div>
-        <div style="margin-top:8px;">
-          <a href="https://github.com/Alterxue" target="_blank">GitHub</a> |
-          <a href="https://www.linkedin.com/in/yuchen-xue-055b02384" target="_blank">LinkedIn</a> |
-          <a href="CV_YuchenXUE.pdf" download>CV (PDF)</a>
-        </div>
-      </div>
-    </header>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Yuchen XUE</h1>
+        <div class="role lang fr">Étudiant ingénieur — INSA Lyon (Informatique)</div>
+        <div class="role lang en hidden">Engineering student — INSA Lyon (Computer Science)</div>
+        <div class="role lang zh hidden">工程学学生 — 里昂国立应用科学学院（计算机专业）</div>
+      </div>
+      <div class="contact">
+        <div>📍 Villeurbanne, France</div>
+        <div>✉️ <a href="mailto:yuchenxue5@gmail.com">yuchenxue5@gmail.com</a></div>
+        <div>✉️ <a href="mailto:yuchen.xue@insa-lyon.fr">yuchen.xue@insa-lyon.fr</a></div>
+        <div>📞 +33 (0)7 89 42 54 49</div>
+        <div style="margin-top:8px;">
+          <a href="https://github.com/Alterxue" target="_blank">GitHub</a> |
+          <a href="https://www.linkedin.com/in/yuchen-xue-055b02384" target="_blank">LinkedIn</a> |
+          <a href="CV_YuchenXUE.pdf" download>CV (PDF)</a>
+        </div>
+      </div>
+    </header>
 
-    <div class="lang-switch">
-      <button onclick="switchLang('fr')" class="active">Français</button>
-      <button onclick="switchLang('en')">English</button>
-      <button onclick="switchLang('zh')">中文</button>
-    </div>
+    <div class="lang-switch">
+      <button onclick="switchLang('fr')" class="active">Français</button>
+      <button onclick="switchLang('en')">English</button>
+      <button onclick="switchLang('zh')">中文</button>
+    </div>
 
-    <!-- Objectif -->
-    <section>
-      <h2 class="lang fr">Objectif</h2>
-      <h2 class="lang en hidden">Objective</h2>
-      <h2 class="lang zh hidden">求职目标</h2>
-      <p class="lang fr">À la recherche d’un stage de deux à trois mois dans le domaine informatique, de 11 juin à début septembre 2026.</p>
-      <p class="lang en hidden">Looking for a 2–3 month internship in the computer science field, from 11 June to early September 2026.</p>
-      <p class="lang zh hidden">寻求2026年6月11号至9月初为期2至3个月的计算机领域实习机会。</p>
-    </section>
+        <section>
+      <h2 class="lang fr">Objectif</h2>
+      <h2 class="lang en hidden">Objective</h2>
+      <h2 class="lang zh hidden">求职目标</h2>
+      <p class="lang fr">À la recherche d’un stage de deux à trois mois dans le domaine informatique, de 11 juin à début septembre 2026.</p>
+      <p class="lang en hidden">Looking for a 2–3 month internship in the computer science field, from 11 June to early September 2026.</p>
+      <p class="lang zh hidden">寻求2026年6月11号至9月初为期2至3个月的计算机领域实习机会。</p>
+    </section>
 
-    <!-- Formation -->
-    <section>
-      <h2 class="lang fr">Formation</h2>
-      <h2 class="lang en hidden">Education</h2>
-      <h2 class="lang zh hidden">教育背景</h2>
-      <p class="lang fr"><strong>École des langues étrangères de Nanjing</strong> — Collège et lycée (2017–2023)</p>
-      <p class="lang en hidden"><strong>Nanjing Foreign Languages School</strong> — Junior high and high school (2017–2023)</p>
-      <p class="lang zh hidden"><strong>南京外国语学校</strong> — 初中和高中 (2017–2023)</p>
+        <section>
+      <h2 class="lang fr">Formation</h2>
+      <h2 class="lang en hidden">Education</h2>
+      <h2 class="lang zh hidden">教育背景</h2>
+      <p class="lang fr"><strong>École des langues étrangères de Nanjing</strong> — Collège et lycée (2017–2023)</p>
+      <p class="lang en hidden"><strong>Nanjing Foreign Languages School</strong> — Junior high and high school (2017–2023)</p>
+      <p class="lang zh hidden"><strong>南京外国语学校</strong> — 初中和高中 (2017–2023)</p>
 
-      <p class="lang fr"><strong>INSA Lyon</strong> — FIMI (2023–2025)</p>
-      <p class="lang en hidden"><strong>INSA Lyon</strong> — FIMI (2023–2025)</p>
-      <p class="lang zh hidden"><strong>里昂国立应用科学学院（INSA Lyon）</strong> — FIMI (2023–2025)</p>
+      <p class="lang fr"><strong>INSA Lyon</strong> — FIMI (2023–2025)</p>
+      <p class="lang en hidden"><strong>INSA Lyon</strong> — FIMI (2023–2025)</p>
+      <p class="lang zh hidden"><strong>里昂国立应用科学学院（INSA Lyon）</strong> — FIMI (2023–2025)</p>
 
-      <p class="lang fr"><strong>INSA Lyon</strong> — Département Informatique (2025–2028, en cours)</p>
-      <p class="lang en hidden"><strong>INSA Lyon</strong> — Department of Computer Science (2025–2028, ongoing)</p>
-      <p class="lang zh hidden"><strong>里昂国立应用科学学院（INSA Lyon）</strong> — 计算机系 (2025–2028，在读)</p>
-    </section>
+      <p class="lang fr"><strong>INSA Lyon</strong> — Département Informatique (2025–2028, en cours)</p>
+      <p class="lang en hidden"><strong>INSA Lyon</strong> — Department of Computer Science (2025–2028, ongoing)</p>
+      <p class="lang zh hidden"><strong>里昂国立应用科学学院（INSA Lyon）</strong> — 计算机系 (2025–2028，在读)</p>
+    </section>
 
-    <!-- Expériences -->
-    <section>
-      <h2 class="lang fr">Expériences</h2>
-      <h2 class="lang en hidden">Experience</h2>
-      <h2 class="lang zh hidden">经历</h2>
+        <section>
+      <h2 class="lang fr">Expériences</h2>
+      <h2 class="lang en hidden">Experience</h2>
+      <h2 class="lang zh hidden">经历</h2>
 
-      <p class="lang fr"><strong>Stage — La Poste, Saint-Priest (juil. – sept. 2024)</strong><br/>Tri du courrier et des colis, maintenance des équipements, amélioration des processus en équipe.</p>
-      <p class="lang en hidden"><strong>Internship — La Poste, Saint-Priest (Jul – Sep 2024)</strong><br/>Mail and parcel sorting, equipment maintenance, and process optimization in a team environment.</p>
-      <p class="lang zh hidden"><strong>实习 — 法国邮政（La Poste），圣普里耶斯 (2024年7月 – 9月)</strong><br/>负责信件与包裹分拣、设备维护，并在团队中优化处理流程。</p>
+      <p class="lang fr"><strong>Stage — La Poste, Saint-Priest (juil. – sept. 2024)</strong><br/>Tri du courrier et des colis, maintenance des équipements, amélioration des processus en équipe.</p>
+      <p class="lang en hidden"><strong>Internship — La Poste, Saint-Priest (Jul – Sep 2024)</strong><br/>Mail and parcel sorting, equipment maintenance, and process optimization in a team environment.</p>
+      <p class="lang zh hidden"><strong>实习 — 法国邮政（La Poste），圣普里耶斯 (2024年7月 – 9月)</strong><br/>负责信件与包裹分拣、设备维护，并在团队中优化处理流程。</p>
 
-      <p class="lang fr"><strong>Programme P2I — INSA Lyon, Lyon (fév. – juin 2025)</strong><br/>Conception d’un dispositif de capture d’insectes pour l’INRAE, développement web, analyse de données et rédaction de protocoles expérimentaux.</p>
-      <p class="lang en hidden"><strong>P2I Project — INSA Lyon (Feb – Jun 2025)</strong><br/>Designed an insect capture device for INRAE; responsible for web development, data analysis, and writing experimental protocols.</p>
-      <p class="lang zh hidden"><strong>P2I 项目 — 里昂国立应用科学学院（INSA Lyon） (2025年2月 – 6月)</strong><br/>为法国国家农业研究院（INRAE）设计昆虫捕捉装置，负责网站开发、数据分析及实验方案编写。</p>
+      <p class="lang fr"><strong>Programme P2I — INSA Lyon, Lyon (fév. – juin 2025)</strong><br/>Conception d’un dispositif de capture d’insectes pour l’INRAE, développement web, analyse de données et rédaction de protocoles expérimentaux.</p>
+      <p class="lang en hidden"><strong>P2I Project — INSA Lyon (Feb – Jun 2025)</strong><br/>Designed an insect capture device for INRAE; responsible for web development, data analysis, and writing experimental protocols.</p>
+      <p class="lang zh hidden"><strong>P2I 项目 — 里昂国立应用科学学院（INSA Lyon） (2025年2月 – 6月)</strong><br/>为法国国家农业研究院（INRAE）设计昆虫捕捉装置，负责网站开发、数据分析及实验方案编写。</p>
 
-      <p class="lang fr"><strong>Projet OptiÉboueurs — INSA Lyon (avr. – juin 2025)</strong><br/>Logiciel optimisant la position des agents de propreté pour la collecte des poubelles de Lyon.</p>
-      <p class="lang en hidden"><strong>OptiÉboueurs Project — INSA Lyon (Apr – Jun 2025)</strong><br/>Software optimizing the placement of garbage collectors for efficient waste collection in Lyon.</p>
-      <p class="lang zh hidden"><strong>OptiÉboueurs 项目 — 里昂国立应用科学学院（INSA Lyon） (2025年4月 – 6月)</strong><br/>开发软件以优化里昂环卫工人（垃圾收集员）的站位，提高垃圾收集效率。</p>
-    </section>
+      <p class="lang fr"><strong>Projet OptiÉboueurs — INSA Lyon (avr. – juin 2025)</strong><br/>Logiciel optimisant la position des agents de propreté pour la collecte des poubelles de Lyon.</p>
+      <p class="lang en hidden"><strong>OptiÉboueurs Project — INSA Lyon (Apr – Jun 2025)</strong><br/>Software optimizing the placement of garbage collectors for efficient waste collection in Lyon.</p>
+      <p class="lang zh hidden"><strong>OptiÉboueurs 项目 — 里昂国立应用科学学院（INSA Lyon） (2025年4月 – 6月)</strong><br/>开发软件以优化里昂环卫工人（垃圾收集员）的站位，提高垃圾收集效率。</p>
+    </section>
 
-    <!-- Projets personnels -->
-    <section>
-      <h2 class="lang fr">Projets personnels</h2>
-      <h2 class="lang en hidden">Personal Projects</h2>
-      <h2 class="lang zh hidden">个人项目</h2>
+        <section>
+      <h2 class="lang fr">Projets personnels</h2>
+      <h2 class="lang en hidden">Personal Projects</h2>
+      <h2 class="lang zh hidden">个人项目</h2>
 
-      <p class="lang fr"><strong>✈️ Real-Time Flight Tracker</strong> — en ligne  
-      <a href="https://flight-tracker-c2817.web.app/" target="_blank">https://flight-tracker-c2817.web.app/</a><br/>
-      Application web affichant en temps réel le trafic aérien mondial à partir des données OpenSky sur une carte interactive Mapbox.</p>
+      <p class="lang fr"><strong>✈️ Real-Time Flight Tracker</strong> — en ligne  
+      <a href="https://flight-tracker-c2817.web.app/" target="_blank">https://flight-tracker-c2817.web.app/</a><br/>
+      Application web affichant en temps réel le trafic aérien mondial à partir des données OpenSky sur une carte interactive Mapbox.</p>
 
-      <p class="lang en hidden"><strong>✈️ Real-Time Flight Tracker</strong> — online  
-      <a href="https://flight-tracker-c2817.web.app/" target="_blank">https://flight-tracker-c2817.web.app/</a><br/>
-      A web application displaying real-time global air traffic using OpenSky data on an interactive Mapbox map.</p>
+      <p class="lang en hidden"><strong>✈️ Real-Time Flight Tracker</strong> — online  
+      <a href="https://flight-tracker-c2817.web.app/" target="_blank">https://flight-tracker-c2817.web.app/</a><br/>
+      A web application displaying real-time global air traffic using OpenSky data on an interactive Mapbox map.</p>
 
-      <p class="lang zh hidden"><strong>✈️ Real-Time Flight Tracker</strong> — 在线  
-      <a href="https://flight-tracker-c2817.web.app/" target="_blank">https://flight-tracker-c2817.web.app/</a><br/>
-      基于 OpenSky 数据的实时航班追踪网页应用，使用交互式 Mapbox 地图展示全球空中交通。</p>
+      <p class="lang zh hidden"><strong>✈️ Real-Time Flight Tracker</strong> — 在线  
+      <a href="https://flight-tracker-c2817.web.app/" target="_blank">https://flight-tracker-c2817.web.app/</a><br/>
+      基于 OpenSky 数据的实时航班追踪网页应用，使用交互式 Mapbox 地图展示全球空中交通。</p>
 
-      <p class="lang fr"><strong>E-Propulsion Feedback Analysis</strong><br/>Analyse SEO et Reddit pour évaluer la perception de la marque E-Propulsion et générer des recommandations actionnables.</p>
-      <p class="lang en hidden"><strong>E-Propulsion Feedback Analysis</strong><br/>SEO and Reddit data analysis to assess brand perception and provide actionable marketing insights.</p>
-      <p class="lang zh hidden"><strong>E-Propulsion 品牌反馈分析</strong><br/>通过 SEO 与 Reddit 数据分析评估品牌形象并提出改进建议。</p>
+      <p class="lang fr"><strong>E-Propulsion Feedback Analysis</strong><br/>Analyse SEO et Reddit pour évaluer la perception de la marque E-Propulsion et générer des recommandations actionnables.</p>
+      <p class="lang en hidden"><strong>E-Propulsion Feedback Analysis</strong><br/>SEO and Reddit data analysis to assess brand perception and provide actionable marketing insights.</p>
+      <p class="lang zh hidden"><strong>E-Propulsion 品牌反馈分析</strong><br/>通过 SEO 与 Reddit 数据分析评估品牌形象并提出改进建议。</p>
 
-      <p class="lang fr"><strong>Insashop (Club SIA BDE INSA Lyon)</strong><br/>Participation au développement du site du BDE ; responsable de la programmation des pages liées à la gestion des stocks.</p>
-      <p class="lang en hidden"><strong>Insashop (SIA Club, INSA BDE)</strong><br/>Participated in developing the student union’s e-shop; implemented stock management pages.</p>
-      <p class="lang zh hidden"><strong>Insashop 项目（INSA BDE 学生会）</strong><br/>参与学生会电商网站开发，负责库存管理页面编程。</p>
-    </section>
+      <p class="lang fr"><strong>Insashop (Club SIA BDE INSA Lyon)</strong><br/>Participation au développement du site du BDE ; responsable de la programmation des pages liées à la gestion des stocks.</p>
+      <p class="lang en hidden"><strong>Insashop (SIA Club, INSA BDE)</strong><br/>Participated in developing the student union’s e-shop; implemented stock management pages.</p>
+      <p class="lang zh hidden"><strong>Insashop 项目（INSA BDE 学生会）</strong><br/>参与学生会电商网站开发，负责库存管理页面编程。</p>
+    </section>
 
-    <!-- Compétences -->
-    <section>
-      <h2 class="lang fr">Compétences</h2>
-      <h2 class="lang en hidden">Skills</h2>
-      <h2 class="lang zh hidden">技能</h2>
-      <p class="lang fr">Langages : C/C++, Python, JavaScript<br/>Frameworks et outils : FastAPI, Next.js, Arduino, Raspberry Pi, Git, Docker</p>
-      <p class="lang en hidden">Languages: C/C++, Python, JavaScript<br/>Frameworks & Tools: FastAPI, Next.js, Arduino, Raspberry Pi, Git, Docker</p>
-      <p class="lang zh hidden">编程语言：C/C++、Python、JavaScript<br/>框架与工具：FastAPI、Next.js、Arduino、Raspberry Pi、Git、Docker</p>
-    </section>
+        <section>
+      <h2 class="lang fr">Compétences</h2>
+      <h2 class="lang en hidden">Skills</h2>
+      <h2 class="lang zh hidden">技能</h2>
+      <p class="lang fr">Langages : C/C++, Python, JavaScript<br/>Frameworks et outils : FastAPI, Next.js, Arduino, Raspberry Pi, Git, Docker</p>
+      <p class="lang en hidden">Languages: C/C++, Python, JavaScript<br/>Frameworks & Tools: FastAPI, Next.js, Arduino, Raspberry Pi, Git, Docker</p>
+      <p class="lang zh hidden">编程语言：C/C++、Python、JavaScript<br/>框架与工具：FastAPI、Next.js、Arduino、Raspberry Pi、Git、Docker</p>
+    </section>
 
-    <!-- Langues -->
-    <section>
-      <h2 class="lang fr">Langues</h2>
-      <h2 class="lang en hidden">Languages</h2>
-      <h2 class="lang zh hidden">语言</h2>
-      <p class="lang fr">Chinois (natif) · Français (C1) · Anglais (C1)</p>
-      <p class="lang en hidden">Chinese (native) · French (C1) · English (C1)</p>
-      <p class="lang zh hidden">中文（母语） · 法语（C1） · 英语（C1）</p>
-    </section>
+        <section>
+      <h2 class="lang fr">Langues</h2>
+      <h2 class="lang en hidden">Languages</h2>
+    Giscus 脚本（你的 `data-repo`、`data-repo-id` 等）
+      <h2 class="lang zh hidden">语言</h2>
+      <p class="lang fr">Chinois (natif) · Français (C1) · Anglais (C1)</p>
+      <p class="lang en hidden">Chinese (native) · French (C1) · English (C1)</p>
+      <p class="lang zh hidden">中文（母语） · 法语（C1） · 英语（C1）</p>
+    </section>
 
-    <!-- Infos -->
-    <section>
-      <h2 class="lang fr">Informations personnelles</h2>
-      <h2 class="lang en hidden">Personal information</h2>
-      <h2 class="lang zh hidden">个人信息</h2>
-      <p class="lang fr">Né le 01/07/2005 · Nationalité : Chinoise · Adresse : 20 Avenue Albert Einstein, Villeurbanne</p>
-      <p class="lang en hidden">Born 01/07/2005 · Nationality: Chinese · Address: 20 Avenue Albert Einstein, Villeurbanne</p>
-      <p class="lang zh hidden">出生日期：2005年7月1日 · 国籍：中国 · 地址：法国维勒班阿尔伯特·爱因斯坦大道20号</p>
-    </section>
+        <section>
+      <h2 class="lang fr">Informations personnelles</h2>
+      <h2 class="lang en hidden">Personal information</h2>
+      <h2 class="lang zh hidden">个人信息</h2>
+nbsp;     <p class="lang fr">Né le 01/07/2005 · Nationalité : Chinoise · Adresse : 20 Avenue Albert Einstein, Villeurbanne</p>
+      <p class="lang en hidden">Born 01/07/2005 · Nationality: Chinese · Address: 20 Avenue Albert Einstein, Villeurbanne</p>
+      <p class="lang zh hidden">出生日期：2005年7月1日 · 国籍：中国 · 地址：法国维勒班阿尔伯特·爱因斯坦大道20号</p>
+    </section>
 
-    <footer>
-      <p>© 2025 — Yuchen Xue</p>
-    </footer>
-  </div>
+        <section>
+      <h2 class="lang fr">Laissez un message</h2>
+      <h2 class="lang en hidden">Leave a Message</h2>
+      <h2 class="lang zh hidden">留言板</h2>
 
-  <script>
-    function switchLang(lang){
-      document.querySelectorAll('.lang').forEach(el => el.classList.add('hidden'));
-      document.querySelectorAll('.lang.'+lang).forEach(el => el.classList.remove('hidden'));
-      document.querySelectorAll('.lang-switch button').forEach(btn => btn.classList.remove('active'));
-      document.querySelector(`.lang-switch button[onclick="switchLang('${lang}')"]`).classList.add('active');
-    }
-  </script>
+      <script src="https://giscus.app/client.js"
+        data-repo="Alterxue/Alterxue.github.io"
+        data-repo-id="R_kgDOP3kbYA"
+        data-mapping="number"
+        data-term="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+      </script>
+
+    </section>
+        <footer>
+      <p>© 2025 — Yuchen Xue</p>
+    </footer>
+  </div>
+
+  <script>
+    function switchLang(lang){
+      document.querySelectorAll('.lang').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.lang.'+lang).forEach(el => el.classList.remove('hidden'));
+      document.querySelectorAll('.lang-switch button').forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`.lang-switch button[onclick="switchLang('${lang}')"]`).classList.add('active');
+CHINESE>
+    }
+  </script>
 </body>
 </html>
-
