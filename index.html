@@ -1,188 +1,642 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Yuchen Xue — CV</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#fdfdfd; color:#111; }
-    .wrap { max-width:900px; margin:auto; padding:40px 20px; }
-    header { display:flex; justify-content:space-between; flex-wrap:wrap; }
-    h1 { margin:0; font-size:32px; }
-    .role { color:#666; font-size:14px; }
-    .contact { text-align:right; font-size:14px; color:#444; }
-    .contact a { color:#444; text-decoration:none; }
-    .lang-switch { margin-top:20px; }
-    .lang-switch button { margin-right:8px; padding:6px 10px; border:1px solid #111; background:#fff; cursor:pointer; border-radius:5px; }
-    .lang-switch button.active { background:#111; color:#fff; }
-    h2 { margin-top:24px; font-size:20px; border-bottom:1px solid #ddd; padding-bottom:4px; }
-    p, li { font-size:14px; color:#333; }
-    ul { padding-left:18px; }
-    footer { margin-top:30px; font-size:13px; color:#666; text-align:center; }
-    .hidden { display:none; }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yuchen Xue — CV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #2563eb;
+      --secondary-color: #64748b;
+      --accent-color: #f59e0b;
+      --text-dark: #1e293b;
+      --text-light: #64748b;
+      --bg-light: #f8fafc;
+      --border-color: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body { 
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+
+    .wrap { 
+      max-width: 1000px;
+      margin: 0 auto;
+      background: white;
+      box-shadow: var(--shadow-lg);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
+      color: white;
+      padding: 3rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 100px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      transform: translate(30px, -30px);
+    }
+
+    .hero-section::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 150px;
+      height: 150px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      transform: translate(-50px, 50px);
+    }
+
+    header { 
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-left h1 { 
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.025em;
+    }
+
+    .role { 
+      font-size: 1.1rem;
+      opacity: 0.9;
+      font-weight: 400;
+    }
+
+    .contact { 
+      text-align: right;
+      font-size: 0.9rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-item i {
+      width: 16px;
+      text-align: center;
+    }
+
+    .contact a { 
+      color: white;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .contact a:hover {
+      opacity: 0.8;
+    }
+
+    .social-links {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: flex-end;
+    }
+
+    .social-links a {
+      padding: 0.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+
+    .social-links a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .content { 
+      padding: 2rem;
+    }
+
+    .lang-switch { 
+      margin-bottom: 2rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .lang-switch button { 
+      padding: 0.5rem 1rem;
+      border: 2px solid var(--primary-color);
+      background: white;
+      color: var(--primary-color);
+      cursor: pointer;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: all 0.2s;
+      font-size: 0.9rem;
+    }
+
+    .lang-switch button:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .lang-switch button.active { 
+      background: var(--primary-color);
+      color: white;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+      background: var(--bg-light);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border-left: 4px solid var(--primary-color);
+    }
+
+    h2 { 
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .experience-item, .project-item {
+      background: white;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      border-left: 3px solid var(--accent-color);
+    }
+
+    .experience-item:last-child, .project-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-title {
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .item-meta {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p, li { 
+      font-size: 1rem;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-category {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .skill-category h3 {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--primary-color);
+    }
+
+    .project-links {
+      margin-top: 1rem;
+    }
+
+    .project-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary-color);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      background: rgba(37, 99, 235, 0.1);
+      border-radius: 6px;
+      transition: all 0.2s;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-links a:hover {
+      background: var(--primary-color);
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    .comments-section {
+      background: var(--bg-light);
+      padding: 2rem;
+      border-radius: 12px;
+      margin-top: 2rem;
+    }
+
+    .comments-section h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    footer { 
+      background: var(--text-dark);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+
+    .hidden { 
+      display: none !important;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .wrap {
+        margin: 0.5rem;
+        border-radius: 12px;
+      }
+
+      .hero-section {
+        padding: 2rem 1rem;
+      }
+
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .contact {
+        text-align: center;
+      }
+
+      .contact-item {
+        justify-content: center;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .hero-left h1 {
+        font-size: 2rem;
+      }
+
+      .content {
+        padding: 1rem;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Animation */
+    section {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .lang-switch button,
+    .experience-item,
+    .project-item,
+    .skill-category {
+      transition: transform 0.2s ease;
+    }
+
+    .experience-item:hover,
+    .project-item:hover,
+    .skill-category:hover {
+      transform: translateY(-2px);
+    }
+  </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div>
-        <h1>Yuchen XUE</h1>
-        <div class="role lang fr">Étudiant ingénieur — INSA Lyon (Informatique)</div>
-        <div class="role lang en hidden">Engineering student — INSA Lyon (Computer Science)</div>
-        <div class="role lang zh hidden">工程学学生 — 里昂国立应用科学学院（计算机专业）</div>
-      </div>
-      <div class="contact">
-        <div>📍 Villeurbanne, France</div>
-        <div>✉️ <a href="mailto:yuchenxue5@gmail.com">yuchenxue5@gmail.com</a></div>
-        <div>✉️ <a href="mailto:yuchen.xue@insa-lyon.fr">yuchen.xue@insa-lyon.fr</a></div>
-        <div>📞 +33 (0)7 89 42 54 49</div>
-        <div style="margin-top:8px;">
-          <a href="https://github.com/Alterxue" target="_blank">GitHub</a> |
-          <a href="https://www.linkedin.com/in/yuchen-xue-055b02384" target="_blank">LinkedIn</a> |
-          <a href="CV_YuchenXUE.pdf" download>CV (PDF)</a>
-        </div>
-      </div>
-    </header>
+  <div class="wrap">
+    <div class="hero-section">
+      <header>
+        <div class="hero-left">
+          <h1>Yuchen XUE</h1>
+          <div class="role lang fr">Étudiant ingénieur — INSA Lyon (Informatique)</div>
+          <div class="role lang en hidden">Engineering student — INSA Lyon (Computer Science)</div>
+          <div class="role lang zh hidden">工程学学生 — 里昂国立应用科学学院（计算机专业）</div>
+        </div>
+        <div class="contact">
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Villeurbanne, France</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:yuchenxue5@gmail.com">yuchenxue5@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:yuchen.xue@insa-lyon.fr">yuchen.xue@insa-lyon.fr</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <span>+33 (0)7 89 42 54 49</span>
+          </div>
+          <div class="social-links">
+            <a href="https://github.com/Alterxue" target="_blank" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/yuchen-xue-055b02384" target="_blank" title="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="CV_YuchenXUE.pdf" download title="CV (PDF)">
+              <i class="fas fa-file-pdf"></i>
+            </a>
+          </div>
+        </div>
+      </header>
+    </div>
 
-    <div class="lang-switch">
-      <button onclick="switchLang('fr')" class="active">Français</button>
-      <button onclick="switchLang('en')">English</button>
-      <button onclick="switchLang('zh')">中文</button>
-    </div>
+    <div class="content">
+      <div class="lang-switch">
+        <button onclick="switchLang('fr')" class="active">🇫🇷 Français</button>
+        <button onclick="switchLang('en')">🇬🇧 English</button>
+        <button onclick="switchLang('zh')">🇨🇳 中文</button>
+      </div>
 
-        <section>
-      <h2 class="lang fr">Objectif</h2>
-      <h2 class="lang en hidden">Objective</h2>
-      <h2 class="lang zh hidden">求职目标</h2>
-      <p class="lang fr">À la recherche d’un stage de deux à trois mois dans le domaine informatique, de 11 juin à début septembre 2026.</p>
-      <p class="lang en hidden">Looking for a 2–3 month internship in the computer science field, from 11 June to early September 2026.</p>
-      <p class="lang zh hidden">寻求2026年6月11号至9月初为期2至3个月的计算机领域实习机会。</p>
-    </section>
+      <section>
+        <h2 class="lang fr"><i class="fas fa-target"></i> Objectif</h2>
+        <h2 class="lang en hidden"><i class="fas fa-target"></i> Objective</h2>
+        <h2 class="lang zh hidden"><i class="fas fa-target"></i> 求职目标</h2>
+        <p class="lang fr">À la recherche d'un stage de deux à trois mois dans le domaine informatique, de 11 juin à début septembre 2026.</p>
+        <p class="lang en hidden">Looking for a 2–3 month internship in the computer science field, from 11 June to early September 2026.</p>
+        <p class="lang zh hidden">寻求2026年6月11号至9月初为期2至3个月的计算机领域实习机会。</p>
+      </section>
 
-        <section>
-      <h2 class="lang fr">Formation</h2>
-      <h2 class="lang en hidden">Education</h2>
-      <h2 class="lang zh hidden">教育背景</h2>
-      <p class="lang fr"><strong>École des langues étrangères de Nanjing</strong> — Collège et lycée (2017–2023)</p>
-      <p class="lang en hidden"><strong>Nanjing Foreign Languages School</strong> — Junior high and high school (2017–2023)</p>
-      <p class="lang zh hidden"><strong>南京外国语学校</strong> — 初中和高中 (2017–2023)</p>
+      <section>
+        <h2 class="lang fr"><i class="fas fa-graduation-cap"></i> Formation</h2>
+        <h2 class="lang en hidden"><i class="fas fa-graduation-cap"></i> Education</h2>
+        <h2 class="lang zh hidden"><i class="fas fa-graduation-cap"></i> 教育背景</h2>
+        
+        <div class="experience-item">
+          <div class="item-title lang fr">École des langues étrangères de Nanjing</div>
+          <div class="item-title lang en hidden">Nanjing Foreign Languages School</div>
+          <div class="item-title lang zh hidden">南京外国语学校</div>
+          <div class="item-meta">2017–2023</div>
+          <p class="lang fr">Collège et lycée</p>
+          <p class="lang en hidden">Junior high and high school</p>
+          <p class="lang zh hidden">初中和高中</p>
+        </div>
 
-      <p class="lang fr"><strong>INSA Lyon</strong> — FIMI (2023–2025)</p>
-      <p class="lang en hidden"><strong>INSA Lyon</strong> — FIMI (2023–2025)</p>
-      <p class="lang zh hidden"><strong>里昂国立应用科学学院（INSA Lyon）</strong> — FIMI (2023–2025)</p>
+        <div class="experience-item">
+          <div class="item-title">INSA Lyon - FIMI</div>
+          <div class="item-meta">2023–2025</div>
+          <p class="lang fr">Formation d'ingénieur multidisciplinaire internationale</p>
+          <p class="lang en hidden">International multidisciplinary engineering training</p>
+          <p class="lang zh hidden">国际多学科工程师培训</p>
+        </div>
 
-      <p class="lang fr"><strong>INSA Lyon</strong> — Département Informatique (2025–2028, en cours)</p>
-      <p class="lang en hidden"><strong>INSA Lyon</strong> — Department of Computer Science (2025–2028, ongoing)</p>
-      <p class="lang zh hidden"><strong>里昂国立应用科学学院（INSA Lyon）</strong> — 计算机系 (2025–2028，在读)</p>
-    </section>
+        <div class="experience-item">
+          <div class="item-title lang fr">INSA Lyon — Département Informatique</div>
+          <div class="item-title lang en hidden">INSA Lyon — Department of Computer Science</div>
+          <div class="item-title lang zh hidden">里昂国立应用科学学院（INSA Lyon）— 计算机系</div>
+          <div class="item-meta lang fr">2025–2028, en cours</div>
+          <div class="item-meta lang en hidden">2025–2028, ongoing</div>
+          <div class="item-meta lang zh hidden">2025–2028，在读</div>
+        </div>
+      </section>
 
-        <section>
-      <h2 class="lang fr">Expériences</h2>
-      <h2 class="lang en hidden">Experience</h2>
-      <h2 class="lang zh hidden">经历</h2>
+      <section>
+        <h2 class="lang fr"><i class="fas fa-briefcase"></i> Expériences</h2>
+        <h2 class="lang en hidden"><i class="fas fa-briefcase"></i> Experience</h2>
+        <h2 class="lang zh hidden"><i class="fas fa-briefcase"></i> 经历</h2>
 
-      <p class="lang fr"><strong>Stage — La Poste, Saint-Priest (juil. – sept. 2024)</strong><br/>Tri du courrier et des colis, maintenance des équipements, amélioration des processus en équipe.</p>
-      <p class="lang en hidden"><strong>Internship — La Poste, Saint-Priest (Jul – Sep 2024)</strong><br/>Mail and parcel sorting, equipment maintenance, and process optimization in a team environment.</p>
-      <p class="lang zh hidden"><strong>实习 — 法国邮政（La Poste），圣普里耶斯 (2024年7月 – 9月)</strong><br/>负责信件与包裹分拣、设备维护，并在团队中优化处理流程。</p>
+        <div class="experience-item">
+          <div class="item-title lang fr">Stage — La Poste, Saint-Priest</div>
+          <div class="item-title lang en hidden">Internship — La Poste, Saint-Priest</div>
+          <div class="item-title lang zh hidden">实习 — 法国邮政（La Poste），圣普里耶斯</div>
+          <div class="item-meta lang fr">juillet – septembre 2024</div>
+          <div class="item-meta lang en hidden">July – September 2024</div>
+          <div class="item-meta lang zh hidden">2024年7月 – 9月</div>
+          <p class="lang fr">Tri du courrier et des colis, maintenance des équipements, amélioration des processus en équipe.</p>
+          <p class="lang en hidden">Mail and parcel sorting, equipment maintenance, and process optimization in a team environment.</p>
+          <p class="lang zh hidden">负责信件与包裹分拣、设备维护，并在团队中优化处理流程。</p>
+        </div>
 
-      <p class="lang fr"><strong>Programme P2I — INSA Lyon, Lyon (fév. – juin 2025)</strong><br/>Conception d’un dispositif de capture d’insectes pour l’INRAE, développement web, analyse de données et rédaction de protocoles expérimentaux.</p>
-      <p class="lang en hidden"><strong>P2I Project — INSA Lyon (Feb – Jun 2025)</strong><br/>Designed an insect capture device for INRAE; responsible for web development, data analysis, and writing experimental protocols.</p>
-      <p class="lang zh hidden"><strong>P2I 项目 — 里昂国立应用科学学院（INSA Lyon） (2025年2月 – 6月)</strong><br/>为法国国家农业研究院（INRAE）设计昆虫捕捉装置，负责网站开发、数据分析及实验方案编写。</p>
+        <div class="experience-item">
+          <div class="item-title lang fr">Programme P2I — INSA Lyon</div>
+          <div class="item-title lang en hidden">P2I Project — INSA Lyon</div>
+          <div class="item-title lang zh hidden">P2I 项目 — 里昂国立应用科学学院（INSA Lyon）</div>
+          <div class="item-meta lang fr">février – juin 2025</div>
+          <div class="item-meta lang en hidden">February – June 2025</div>
+          <div class="item-meta lang zh hidden">2025年2月 – 6月</div>
+          <p class="lang fr">Conception d'un dispositif de capture d'insectes pour l'INRAE, développement web, analyse de données et rédaction de protocoles expérimentaux.</p>
+          <p class="lang en hidden">Designed an insect capture device for INRAE; responsible for web development, data analysis, and writing experimental protocols.</p>
+          <p class="lang zh hidden">为法国国家农业研究院（INRAE）设计昆虫捕捉装置，负责网站开发、数据分析及实验方案编写。</p>
+        </div>
 
-      <p class="lang fr"><strong>Projet OptiÉboueurs — INSA Lyon (avr. – juin 2025)</strong><br/>Logiciel optimisant la position des agents de propreté pour la collecte des poubelles de Lyon.</p>
-      <p class="lang en hidden"><strong>OptiÉboueurs Project — INSA Lyon (Apr – Jun 2025)</strong><br/>Software optimizing the placement of garbage collectors for efficient waste collection in Lyon.</p>
-      <p class="lang zh hidden"><strong>OptiÉboueurs 项目 — 里昂国立应用科学学院（INSA Lyon） (2025年4月 – 6月)</strong><br/>开发软件以优化里昂环卫工人（垃圾收集员）的站位，提高垃圾收集效率。</p>
-    </section>
+        <div class="experience-item">
+          <div class="item-title lang fr">Projet OptiÉboueurs — INSA Lyon</div>
+          <div class="item-title lang en hidden">OptiÉboueurs Project — INSA Lyon</div>
+          <div class="item-title lang zh hidden">OptiÉboueurs 项目 — 里昂国立应用科学学院（INSA Lyon）</div>
+          <div class="item-meta lang fr">avril – juin 2025</div>
+          <div class="item-meta lang en hidden">April – June 2025</div>
+          <div class="item-meta lang zh hidden">2025年4月 – 6月</div>
+          <p class="lang fr">Logiciel optimisant la position des agents de propreté pour la collecte des poubelles de Lyon.</p>
+          <p class="lang en hidden">Software optimizing the placement of garbage collectors for efficient waste collection in Lyon.</p>
+          <p class="lang zh hidden">开发软件以优化里昂环卫工人（垃圾收集员）的站位，提高垃圾收集效率。</p>
+        </div>
+      </section>
 
-        <section>
-      <h2 class="lang fr">Projets personnels</h2>
-      <h2 class="lang en hidden">Personal Projects</h2>
-      <h2 class="lang zh hidden">个人项目</h2>
+      <section>
+        <h2 class="lang fr"><i class="fas fa-code"></i> Projets personnels</h2>
+        <h2 class="lang en hidden"><i class="fas fa-code"></i> Personal Projects</h2>
+        <h2 class="lang zh hidden"><i class="fas fa-code"></i> 个人项目</h2>
 
-      <p class="lang fr"><strong>✈️ Real-Time Flight Tracker</strong> — en ligne  
-      <a href="https://flight-tracker-c2817.web.app/" target="_blank">https://flight-tracker-c2817.web.app/</a><br/>
-      Application web affichant en temps réel le trafic aérien mondial à partir des données OpenSky sur une carte interactive Mapbox.</p>
+        <div class="project-item">
+          <div class="item-title">✈️ Real-Time Flight Tracker</div>
+          <div class="item-meta lang fr">Application web en ligne</div>
+          <div class="item-meta lang en hidden">Online web application</div>
+          <div class="item-meta lang zh hidden">在线网页应用</div>
+          <p class="lang fr">Application web affichant en temps réel le trafic aérien mondial à partir des données OpenSky sur une carte interactive Mapbox.</p>
+          <p class="lang en hidden">A web application displaying real-time global air traffic using OpenSky data on an interactive Mapbox map.</p>
+          <p class="lang zh hidden">基于 OpenSky 数据的实时航班追踪网页应用，使用交互式 Mapbox 地图展示全球空中交通。</p>
+          <div class="project-links">
+            <a href="https://flight-tracker-c2817.web.app/" target="_blank">
+              <i class="fas fa-external-link-alt"></i>
+              <span class="lang fr">Voir le projet</span>
+              <span class="lang en hidden">View Project</span>
+              <span class="lang zh hidden">查看项目</span>
+            </a>
+          </div>
+        </div>
 
-      <p class="lang en hidden"><strong>✈️ Real-Time Flight Tracker</strong> — online  
-      <a href="https://flight-tracker-c2817.web.app/" target="_blank">https://flight-tracker-c2817.web.app/</a><br/>
-      A web application displaying real-time global air traffic using OpenSky data on an interactive Mapbox map.</p>
+        <div class="project-item">
+          <div class="item-title">E-Propulsion Feedback Analysis</div>
+          <p class="lang fr">Analyse SEO et Reddit pour évaluer la perception de la marque E-Propulsion et générer des recommandations actionnables.</p>
+          <p class="lang en hidden">SEO and Reddit data analysis to assess brand perception and provide actionable marketing insights.</p>
+          <p class="lang zh hidden">通过 SEO 与 Reddit 数据分析评估品牌形象并提出改进建议。</p>
+        </div>
 
-      <p class="lang zh hidden"><strong>✈️ Real-Time Flight Tracker</strong> — 在线  
-      <a href="https://flight-tracker-c2817.web.app/" target="_blank">https://flight-tracker-c2817.web.app/</a><br/>
-      基于 OpenSky 数据的实时航班追踪网页应用，使用交互式 Mapbox 地图展示全球空中交通。</p>
+        <div class="project-item">
+          <div class="item-title">Insashop (Club SIA BDE INSA Lyon)</div>
+          <p class="lang fr">Participation au développement du site du BDE ; responsable de la programmation des pages liées à la gestion des stocks.</p>
+          <p class="lang en hidden">Participated in developing the student union's e-shop; implemented stock management pages.</p>
+          <p class="lang zh hidden">参与学生会电商网站开发，负责库存管理页面编程。</p>
+        </div>
+      </section>
 
-      <p class="lang fr"><strong>E-Propulsion Feedback Analysis</strong><br/>Analyse SEO et Reddit pour évaluer la perception de la marque E-Propulsion et générer des recommandations actionnables.</p>
-Datalang
-      <p class="lang en hidden"><strong>E-Propulsion Feedback Analysis</strong><br/>SEO and Reddit data analysis to assess brand perception and provide actionable marketing insights.</p>
-      <p class="lang zh hidden"><strong>E-Propulsion 品牌反馈分析</strong><br/>通过 SEO 与 Reddit 数据分析评估品牌形象并提出改进建议。</p>
+      <section>
+        <h2 class="lang fr"><i class="fas fa-tools"></i> Compétences</h2>
+        <h2 class="lang en hidden"><i class="fas fa-tools"></i> Skills</h2>
+        <h2 class="lang zh hidden"><i class="fas fa-tools"></i> 技能</h2>
+        
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3 class="lang fr">Langages de programmation</h3>
+            <h3 class="lang en hidden">Programming Languages</h3>
+            <h3 class="lang zh hidden">编程语言</h3>
+            <p>C/C++, Python, JavaScript</p>
+          </div>
+          <div class="skill-category">
+            <h3 class="lang fr">Frameworks et outils</h3>
+            <h3 class="lang en hidden">Frameworks & Tools</h3>
+            <h3 class="lang zh hidden">框架与工具</h3>
+            <p>FastAPI, Next.js, Arduino, Raspberry Pi, Git, Docker</p>
+          </div>
+        </div>
+      </section>
 
-      <p class="lang fr"><strong>Insashop (Club SIA BDE INSA Lyon)</strong><br/>Participation au développement du site du BDE ; responsable de la programmation des pages liées à la gestion des stocks.</p>
-      <p class="lang en hidden"><strong>Insashop (SIA Club, INSA BDE)</strong><br/>Participated in developing the student union’s e-shop; implemented stock management pages.</p>
-      <p class="lang zh hidden"><strong>Insashop 项目（INSA BDE 学生会）</strong><br/>参与学生会电商网站开发，负责库存管理页面编程。</p>
-    </section>
+      <section>
+        <h2 class="lang fr"><i class="fas fa-language"></i> Langues</h2>
+        <h2 class="lang en hidden"><i class="fas fa-language"></i> Languages</h2>
+        <h2 class="lang zh hidden"><i class="fas fa-language"></i> 语言</h2>
+        
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3 class="lang fr">Chinois</h3>
+            <h3 class="lang en hidden">Chinese</h3>
+            <h3 class="lang zh hidden">中文</h3>
+            <p class="lang fr">Langue maternelle</p>
+            <p class="lang en hidden">Native</p>
+            <p class="lang zh hidden">母语</p>
+          </div>
+          <div class="skill-category">
+            <h3 class="lang fr">Français</h3>
+            <h3 class="lang en hidden">French</h3>
+            <h3 class="lang zh hidden">法语</h3>
+            <p>C1</p>
+          </div>
+          <div class="skill-category">
+            <h3 class="lang fr">Anglais</h3>
+            <h3 class="lang en hidden">English</h3>
+            <h3 class="lang zh hidden">英语</h3>
+            <p>C1</p>
+          </div>
+        </div>
+      </section>
 
-        <section>
-      <h2 class="lang fr">Compétences</h2>
-      <h2 class="lang en hidden">Skills</h2>
-      <h2 class="lang zh hidden">技能</h2>
-      <p class="lang fr">Langages : C/C++, Python, JavaScript<br/>Frameworks et outils : FastAPI, Next.js, Arduino, Raspberry Pi, Git, Docker</p>
-      <p class="lang en hidden">Languages: C/C++, Python, JavaScript<br/>Frameworks & Tools: FastAPI, Next.js, Arduino, Raspberry Pi, Git, Docker</p>
-      <p class="lang zh hidden">编程语言：C/C++、Python、JavaScript<br/>框架与工具：FastAPI、Next.js、Arduino、Raspberry Pi、Git、Docker</p>
-    </section>
+      <section>
+        <h2 class="lang fr"><i class="fas fa-user"></i> Informations personnelles</h2>
+        <h2 class="lang en hidden"><i class="fas fa-user"></i> Personal Information</h2>
+        <h2 class="lang zh hidden"><i class="fas fa-user"></i> 个人信息</h2>
+        <p class="lang fr"><strong>Date de naissance:</strong> 01/07/2005<br/>
+        <strong>Nationalité:</strong> Chinoise<br/>
+        <strong>Adresse:</strong> 20 Avenue Albert Einstein, Villeurbanne</p>
+        <p class="lang en hidden"><strong>Date of birth:</strong> 01/07/2005<br/>
+        <strong>Nationality:</strong> Chinese<br/>
+        <strong>Address:</strong> 20 Avenue Albert Einstein, Villeurbanne</p>
+        <p class="lang zh hidden"><strong>出生日期:</strong> 2005年7月1日<br/>
+        <strong>国籍:</strong> 中国<br/>
+        <strong>地址:</strong> 法国维勒班阿尔伯特·爱因斯坦大道20号</p>
+      </section>
 
-        <section>
-      <h2 class="lang fr">Langues</h2>
-      <h2 class="lang en hidden">Languages</h2>
-      <h2 class="lang zh hidden">语言</h2>
-      <p class="lang fr">Chinois (natif) · Français (C1) · Anglais (C1)</p>
-      <p class="lang en hidden">Chinese (native) · French (C1) · English (C1)</p>
-      <p class="lang zh hidden">中文（母语） · 法语（C1） · 英语（C1）</p>
-    </section>
+      <div class="comments-section">
+        <h2 class="lang fr"><i class="fas fa-comments"></i> Laissez un message</h2>
+        <h2 class="lang en hidden"><i class="fas fa-comments"></i> Leave a Message</h2>
+        <h2 class="lang zh hidden"><i class="fas fa-comments"></i> 留言板</h2>
 
-        <section>
-      <h2 class="lang fr">Informations personnelles</h2>
-      <h2 class="lang en hidden">Personal information</h2>
-      <h2 class="lang zh hidden">个人信息</h2>
-      <p class="lang fr">Né le 01/07/2005 · Nationalité : Chinoise · Adresse : 20 Avenue Albert Einstein, Villeurbanne</p>
-      <p class="lang en hidden">Born 01/07/2005 · Nationality: Chinese · Address: 20 Avenue Albert Einstein, Villeurbanne</p>
-      <p class="lang zh hidden">出生日期：2005年7月1日 · 国籍：中国 · 地址：法国维勒班阿尔伯特·爱因斯坦大道20号</p>
-    </section>
+        <script src="https://giscus.app/client.js"
+          data-repo="Alterxue/Alterxue.github.io"
+          data-repo-id="R_kgDOP3kbYA"
+          data-mapping="number"
+          data-term="1"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme="preferred_color_scheme"
+          data-lang="zh-CN"
+          data-loading="lazy"
+          crossorigin="anonymous"
+          async>
+        </script>
+      </div>
+    </div>
 
-        <section>
-      <h2 class="lang fr">Laissez un message</h2>
-      <h2 class="lang en hidden">Leave a Message</h2>
-      <h2 class="lang zh hidden">留言板</h2>
+    <footer>
+      <p>© 2025 — Yuchen Xue</p>
+    </footer>
+  </div>
 
-      <script src="https://giscus.app/client.js"
-        data-repo="Alterxue/Alterxue.github.io"
-        data-repo-id="R_kgDOP3kbYA"
-        data-mapping="number"
-        data-term="1"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="preferred_color_scheme"
-        data-lang="zh-CN"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-      </script>
-
-    </section>
-    NEW
-    <footer>
-      <p>© 2025 — Yuchen Xue</p>
-    </footer>
-  </div>
-
-  <script>
-    function switchLang(lang){
-      document.querySelectorAll('.lang').forEach(el => el.classList.add('hidden'));
-      document.querySelectorAll('.lang.'+lang).forEach(el => el.classList.remove('hidden'));
-      document.querySelectorAll('.lang-switch button').forEach(btn => btn.classList.remove('active'));
-      document.querySelector(`.lang-switch button[onclick="switchLang('${lang}')"]`).classList.add('active');
-Next
-    }
-  </script>
+  <script>
+    function switchLang(lang){
+      document.querySelectorAll('.lang').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.lang.'+lang).forEach(el => el.classList.remove('hidden'));
+      document.querySelectorAll('.lang-switch button').forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`.lang-switch button[onclick="switchLang('${lang}')"]`).classList.add('active');
+    }
+  </script>
 </body>
 </html>
